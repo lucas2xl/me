@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  name: string;
+  image: string;
+}
+
+const { image, name } = Astro.props;
+---
+
+<Image
+  class="h-10 w-10 rounded-full"
+  src={image}
+  alt={name}
+  width="200"
+  height="200"
+/>

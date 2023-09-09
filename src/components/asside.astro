@@ -1,0 +1,36 @@
+---
+import MainNav from '@/components/main-nav.astro';
+import MobileNav from '@/components/mobile-nav';
+import Profile from '@/components/profile.astro';
+import { navs } from '@/config/navs';
+---
+
+<header
+  class="fixed top-0 z-40 h-16 w-full border-b bg-background/95 backdrop-blur lg:min-h-screen lg:w-64 lg:border-b-0 lg:border-r"
+>
+  <div
+    class="flex h-full items-center justify-between px-4 lg:flex-col lg:justify-start lg:py-10"
+  >
+    <a href="/">
+      <div class="flex items-center gap-4">
+        <Profile image="/images/profile.png" name="@lucasaguiar" />
+        <div>
+          <h1 class="font-bold">Lucas Aguiar</h1>
+          <p class="text-center text-xs leading-loose text-muted-foreground">
+            Fullstack Developer
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <div class="flex gap-2 lg:hidden">
+      <MobileNav client:load>
+        <MainNav navs={navs} />
+      </MobileNav>
+    </div>
+
+    <div class="mt-6 hidden lg:flex lg:h-full w-full">
+      <MainNav navs={navs} />
+    </div>
+  </div>
+</header>

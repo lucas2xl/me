@@ -1,0 +1,16 @@
+---
+import ContactForm from '@/components/contact-form';
+import { contact } from '@/config/contact';
+import Layout from '@/layouts/layout.astro';
+import PageHeader from '@/layouts/page-header.astro';
+
+const { title, description } = contact;
+---
+
+<Layout title="Lucas Aguiar - Contato">
+  <PageHeader title={[title]} description={description} />
+
+  <div class="mb-10 mt-16 flex flex-col gap-4">
+    <ContactForm />
+  </div>
+</Layout>

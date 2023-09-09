@@ -1,0 +1,61 @@
+---
+import { GithubIcon, LinkedinIcon, TwitterIcon, icons } from 'lucide-react';
+
+import { ModeToggle } from '@/components/mode-toggle';
+import NavLink from '@/components/nav-link.astro';
+import { site } from '@/config/site';
+import { verifyPath } from '@/utils/verify-path';
+
+interface Props {
+  navs: {
+    title: string;
+    path: string;
+    icon: string;
+  }[];
+}
+
+const { navs } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<div class="flex h-full w-full flex-col justify-between">
+  <nav>
+    <div class="mt-4 flex flex-col gap-2">
+      <p class="text-xs font-light uppercase leading-loose">Menu</p>
+      {
+        navs.map(nav => {
+          const LucideIcon = icons[nav.icon as keyof typeof icons];
+          return (
+            <NavLink path={nav.path} isSelect={verifyPath(nav.path, pathname)}>
+              <LucideIcon className="h-4 w-4" />
+              {nav.title}
+            </NavLink>
+          );
+        })
+      }
+    </div>
+
+    <div class="mt-10">
+      <p class="text-xs font-light uppercase leading-loose">Seguir</p>
+
+      <div class="mt-2 flex flex-col gap-2">
+        <NavLink path={site.links.linkedin} isExternal>
+          <LinkedinIcon className="h-4 w-4" />
+           Linkedin
+        </NavLink>
+
+        <NavLink path={site.links.github} isExternal>
+          <GithubIcon className="h-4 w-4" />
+           Github
+        </NavLink>
+
+        <NavLink path={site.links.twitter} isExternal>
+          <TwitterIcon className="h-4 w-4" />
+           Twitter
+        </NavLink>
+      </div>
+    </div>
+  </nav>
+
+  <ModeToggle client:load />
+</div>

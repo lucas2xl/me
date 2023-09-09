@@ -1,0 +1,40 @@
+---
+import CopyButton from '@/components/copy-button';
+import ProjectCard from '@/components/project-card.astro';
+import StackCard from '@/components/stack-card';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { home } from '@/config/home';
+import { projects } from '@/config/projects';
+import { site } from '@/config/site';
+import Layout from '@/layouts/layout.astro';
+import PageHeader from '@/layouts/page-header.astro';
+
+const { title, description } = home;
+const { projects: allProjects } = projects;
+---
+
+<Layout title="Lucas Aguiar">
+  <div>
+    <PageHeader title={title} description={description}>
+      <div class="mt-8 flex items-center gap-2">
+        <a class={buttonVariants()} href="/contact">Contato</a>
+        <CopyButton client:load copy={site.author.email}>E-mail</CopyButton>
+      </div>
+    </PageHeader>
+
+    <div class="mb-10 mt-16 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <p class="text-base font-medium">Últimos projetos</p>
+        <Button variant="link">
+          <a href="/projects">Ver todos</a>
+        </Button>
+      </div>
+
+      {allProjects.slice(0, 2).map(project => <ProjectCard {...project} />)}
+
+      <div class="mt-10">
+        <StackCard client:load />
+      </div>
+    </div>
+  </div>
+</Layout>
