@@ -2,7 +2,7 @@
 import CopyButton from '@/components/copy-button';
 import ProjectCard from '@/components/project-card.astro';
 import StackCard from '@/components/stack-card';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { home } from '@/config/home';
 import { projects } from '@/config/projects';
 import { site } from '@/config/site';
@@ -25,9 +25,9 @@ const { projects: allProjects } = projects;
     <div class="mb-10 mt-16 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <p class="text-base font-medium">Últimos projetos</p>
-        <Button variant="link">
-          <a href="/projects">Ver todos</a>
-        </Button>
+        <a class={buttonVariants({ variant: 'link' })} href="/projects"
+          >Ver todos</a
+        >
       </div>
 
       {allProjects.slice(0, 2).map(project => <ProjectCard {...project} />)}

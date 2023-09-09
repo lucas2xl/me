@@ -19,8 +19,8 @@ interface Props {
 const { title, description, image, slug, tags } = Astro.props;
 ---
 
-<a href={`/projects/${slug}`}>
-  <Card className={cn('cursor-pointer')}>
+<Card className={cn('cursor-pointer')}>
+  <a href={`/projects/${slug}`}>
     <CardHeader className="flex flex-col gap-4 lg:flex-row">
       <Image
         alt={title}
@@ -47,5 +47,5 @@ const { title, description, image, slug, tags } = Astro.props;
         </div>
       </div>
     </CardHeader>
-  </Card>
-</a>
+  </a>
+</Card>

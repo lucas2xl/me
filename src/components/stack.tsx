@@ -1,21 +1,16 @@
 interface StackProps {
   title: string;
-  image: string;
+  icon: any;
 }
 
-export default function Stack({ title, image }: StackProps) {
+export default function Stack({ title, icon }: StackProps) {
+  const Icon = icon;
   return (
     <div
       key={title}
       className=" flex items-center space-x-4 rounded-md border p-4"
     >
-      <img
-        alt={title}
-        src={image}
-        width="20"
-        height="20"
-        className="rounded-md"
-      />
+      {Icon}
       <div className="flex-1 space-y-1">
         <p className="text-sm font-medium leading-none">{title}</p>
       </div>

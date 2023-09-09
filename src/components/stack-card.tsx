@@ -21,15 +21,15 @@ export default function StackCard({ className, ...props }: CardProps) {
       <CardContent>
         <Collapsible open={isOpen} onOpenChange={setIsOpen}>
           <CardHeader>
-            <CollapsibleTrigger asChild>
-              <div className="flex cursor-pointer items-center justify-between">
-                <CardTitle>Stacks</CardTitle>
+            <div className="flex cursor-pointer items-center justify-between">
+              <CardTitle>Stacks</CardTitle>
+              <CollapsibleTrigger asChild>
                 <Button variant="ghost" size="sm" className="w-9 p-0">
                   <ChevronsUpDownIcon className="h-4 w-4" />
                   <span className="sr-only">Toggle</span>
                 </Button>
-              </div>
-            </CollapsibleTrigger>
+              </CollapsibleTrigger>
+            </div>
           </CardHeader>
 
           <div className="space-y-2">

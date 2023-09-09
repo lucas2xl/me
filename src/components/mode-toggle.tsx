@@ -35,7 +35,7 @@ export function ModeToggle() {
           Tema {theme === 'light' ? 'Claro' : 'Escuro'}
         </p>
       </div>
-      <Switch onCheckedChange={handleThemeChange} />
+      <Switch onCheckedChange={handleThemeChange} aria-label="toggle theme" />
     </div>
   );
 }

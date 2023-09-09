@@ -1,15 +1,15 @@
 import { ScrollArea } from '@radix-ui/react-scroll-area';
 import { MenuIcon } from 'lucide-react';
-import * as React from 'react';
+import { useState, type ReactNode } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 export default function MobileNav({ children }: Props) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>

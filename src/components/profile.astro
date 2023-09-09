@@ -9,10 +9,6 @@ interface Props {
 const { image, name } = Astro.props;
 ---
 
-<Image
-  class="h-10 w-10 rounded-full"
-  src={image}
-  alt={name}
-  width="200"
-  height="200"
-/>
+<div class="rounded-full overflow-hidden h-10 w-10">
+  <Image class="object-cover" src={image} alt={name} width="100" height="100" />
+</div>
