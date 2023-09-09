@@ -1,4 +1,4 @@
-'use client';
+import { render } from '@react-email/render';
 import { useState, type FormEvent } from 'react';
 
 import Email from '@/components/email-template';
@@ -16,7 +16,6 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { site } from '@/config/site';
 import { SendEmail } from '@/services/send-email';
-import { render } from '@react-email/render';
 
 export default function ContactForm() {
   const [isSending, setIsSending] = useState(false);

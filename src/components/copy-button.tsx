@@ -1,9 +1,7 @@
-'use client';
-
+import { CopyIcon } from 'lucide-react';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
-import { CopyIcon } from 'lucide-react';
 
 type Props = {
   children?: React.ReactNode;
