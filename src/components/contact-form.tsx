@@ -41,7 +41,6 @@ export default function ContactForm() {
       await SendEmail(data);
       resetForm();
     } catch (error) {
-      console.log({ error });
     } finally {
       setIsSending(false);
     }
