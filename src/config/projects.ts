@@ -8,7 +8,7 @@ export const projects = {
       description:
         'O Observatório Sebrae Startups é uma plataforma agregadora de dados que tem como objetivo integrar e democratizar o acesso a informações de startups, considerando todo o ecossistema de inovação envolvido na sua concepção e desenvolvimento.',
       tags: ['Next.js', 'TailwindCSS', 'TypeScript', 'Docker', 'Postgres'],
-      image: 'src/assets/observatorio-sebrae-startups.webp',
+      image: '../assets/observatorio-sebrae-startups.webp',
       slug: 'observatorio-sebrae-startups',
       repository: 'https://observatorio.sebraestartups.com.br',
       contents: [
@@ -19,7 +19,7 @@ export const projects = {
       title: 'Data Insight Lab',
       description: 'Landing Page moderna e clean para Data Insight Lab.',
       tags: ['Next.js', 'TailwindCSS'],
-      image: 'src/assets/data-insight-lab.webp',
+      image: '../assets/data-insight-lab.webp',
       slug: 'data-insight-lab',
       repository: 'https://github.com/LucasAguiarr/data-insight-lab',
       contents: [
