@@ -1,5 +1,10 @@
 ---
-import { GithubIcon, LinkedinIcon, TwitterIcon, icons } from 'lucide-react';
+import {
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  type LucideIcon,
+} from 'lucide-react';
 
 import { ModeToggle } from '@/components/mode-toggle';
 import NavLink from '@/components/nav-link.astro';
@@ -10,7 +15,7 @@ interface Props {
   navs: {
     title: string;
     path: string;
-    icon: string;
+    icon: LucideIcon;
   }[];
 }
 
@@ -24,7 +29,7 @@ const { pathname } = Astro.url;
       <p class="text-xs font-light uppercase leading-loose">Menu</p>
       {
         navs.map(nav => {
-          const LucideIcon = icons[nav.icon as keyof typeof icons];
+          const LucideIcon = nav.icon;
           return (
             <NavLink path={nav.path} isSelect={verifyPath(nav.path, pathname)}>
               <LucideIcon className="h-4 w-4" />
@@ -41,17 +46,17 @@ const { pathname } = Astro.url;
       <div class="mt-2 flex flex-col gap-2">
         <NavLink path={site.links.linkedin} isExternal>
           <LinkedinIcon className="h-4 w-4" />
-           Linkedin
+          Linkedin
         </NavLink>
 
         <NavLink path={site.links.github} isExternal>
           <GithubIcon className="h-4 w-4" />
-           Github
+          Github
         </NavLink>
 
         <NavLink path={site.links.twitter} isExternal>
           <TwitterIcon className="h-4 w-4" />
-           Twitter
+          Twitter
         </NavLink>
       </div>
     </div>

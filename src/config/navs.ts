@@ -1,22 +1,23 @@
+import { CompassIcon, MailIcon, SendIcon, UserCheck2Icon } from 'lucide-react';
 export const navs = [
   {
     title: 'Inicio',
     path: '/',
-    icon: 'Compass',
+    icon: CompassIcon,
   },
   {
     title: 'Projetos',
     path: '/projects',
-    icon: 'Send',
+    icon: SendIcon,
   },
   {
     title: 'Sobre',
     path: '/about',
-    icon: 'UserCircle2',
+    icon: UserCheck2Icon,
   },
   {
     title: 'Contato',
     path: '/contact',
-    icon: 'Mail',
+    icon: MailIcon,
   },
 ];
